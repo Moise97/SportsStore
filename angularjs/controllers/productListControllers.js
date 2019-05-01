@@ -6,7 +6,7 @@ angular.module("sportsStore")
                 selectedCategory = newCategory;
             }
 
-            $filter.categoryFilterFn = function(product){
+            $scope.categoryFilterFn = function(product){
                 return selectedCategory == null || product.category == selectedCategory;
             }
         });
