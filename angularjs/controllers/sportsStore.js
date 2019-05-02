@@ -7,10 +7,10 @@ angular.module("sportsStore")
                 method: 'GET',
                 url: dataUrl
             })
-            .then(function (response){
-                console.log(response);
+            .then(response => {
                 $scope.data.products = response.data;
-            },function (error){
+            })
+            .catch(error => {
                 $scope.data.error = error;
             });
 
