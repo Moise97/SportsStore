@@ -46,3 +46,29 @@ angular.module("cart", [])
         }
     }
 })
+.directive("cartSummary", function(cart){
+    return {
+        restrict: "E",
+        templateUrl: "components/cart/cartSummary.html",
+        controller: function($scope) {
+            
+            let cartData = cart.getProduct();
+            
+            $scope.total = function(){
+                let total = 0;
+                for(let i = 0; i < cartData.length; i++){
+                    total += (cartData[i].price * cartData[i].count);
+                }
+                return total;
+            }
+            
+            $scope.itemCount = function(){
+                let total = 0;
+                for(let i = 0; i < cartData.length; i++){
+                    total += cartData[i].count;
+                }
+                return total;
+            }
+        }
+    };
+});
