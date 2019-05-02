@@ -6,15 +6,17 @@
         <link rel="stylesheet" href="angularjs/bootstrap.css">
         <link rel="stylesheet" href="angularjs/bootstrap-theme.css">
         <script>
-            angular.module("sportsStore", ["customFilters"]);
+            angular.module("sportsStore", ["customFilters", "cart"]);
         </script>
         <script src="angularjs/controllers/sportsStore.js"></script>
         <script src="angularjs/filters/customFilters.js"></script>
+        <script src="angularjs/components/cart/cart.js"></script>
         <script src="angularjs/controllers/productListControllers.js"></script>
     </head>
     <body ng-controller="sportsStoreCtrl">
         <div class="navbar navbar-inverse">
             <a class="navbar-brand" href="#">Sports Store</a>
+            <cart-summary></cart-summary>
         </div>
 
         <div class="panel alert-danger" ng-show="data.error">
