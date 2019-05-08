@@ -1,0 +1,6 @@
+node_modules/
+angularjs/angular.js
+angularjs/bootstrap-theme.css
+angularjs/bootstrap.css
+angularjs/ngmodules/
+package-lock.json
