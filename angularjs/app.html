@@ -17,6 +17,14 @@
                             templateUrl: "angularjs/views/productList.html"
                         });
 
+                        $routeProvider.when("/complete", {
+                            templateUrl: "angularjs/views/thankYou.html"
+                        });
+
+                        $routeProvider.when("/placeorder", {
+                            templateUrl: "angularjs/views/placeOrder.html"
+                        });
+
                         $routeProvider.otherwise({
                             templateUrl: "angularjs/views/productList.html"
                         });
@@ -27,6 +35,7 @@
         <script src="angularjs/filters/customFilters.js"></script>
         <script src="angularjs/components/cart/cart.js"></script>
         <script src="angularjs/controllers/productListControllers.js"></script>
+        <script src="angularjs/controllers/checkoutControllers.js"></script>
         <script src="angularjs/ngmodules/angular-route.js"></script>
     </head>
     <body ng-controller="sportsStoreCtrl">
@@ -38,8 +47,6 @@
         <div class="alert alert-danger" ng-show="data.error">
             Error ({{data.error.status}}). The product data was not loaded.
         </div>
-
-    
 
         <ng-view />
 

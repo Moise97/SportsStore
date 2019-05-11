@@ -14,7 +14,7 @@ angular.module("cart", [])
         addProduct: function(id, name, price){
             let addedToExistingItem = false;
             for(let i = 0; i < cartData.length; i++){
-                if(cartData.id == id){
+                if(cartData[i].id == id){
                     cartData[i].count++;
                     addedToExistingItem = true;
                     break;
@@ -41,7 +41,7 @@ angular.module("cart", [])
         /**
         * Returns the array of objects in the cart
         */
-        getProduct: function(){
+        getProducts: function(){
             return cartData;
         }
     }
@@ -52,7 +52,7 @@ angular.module("cart", [])
         templateUrl: "angularjs/components/cart/cartSummary.html",
         controller: function($scope) {
             
-            let cartData = cart.getProduct();
+            let cartData = cart.getProducts();
             
             $scope.total = function(){
                 let total = 0;
