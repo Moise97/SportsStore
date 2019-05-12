@@ -1,7 +1,7 @@
 # SportsStore
 
 ## Description
-  My application, called SportsStore, will follow the classic approach taken by online stores everywhere.I will create an online product catalog that customers can browse by category and page, a shopping cart where users can add and remove products, and a checkout where customers can enter their shipping details and place their orders.
+  My application, called SportsStore, will follow the classic approach taken by online stores everywhere.I will create an online product catalog that customers can browse by category and page, a shopping cart where users can add and remove products, and a checkout where customers can enter their shipping details and place their orders. I also build an administration application that allows authenticated users to see the set of orders and manage the product catalog (link : https://github.com/Moise97/SportsStoreAdmin)
 
 ## Prerequisites
   The first step is to create a new Deployd application. You will need to download and install Deployd, and after that you need to create a directory to hold the files that are generated. 
