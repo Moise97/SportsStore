@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html ng-app="sportsStore">
-    <head>
-        <title>SportsStore</title>
-        <script src="angularjs/angular.js"></script>
-        <link rel="stylesheet" href="angularjs/bootstrap.css">
-        <link rel="stylesheet" href="angularjs/bootstrap-theme.css">
-        <script>
-            angular.module("sportsStore", ["customFilters", "cart", "ngRoute"])
-                    .config(function($routeProvider){
+<head>
+    <title>EasySale</title>
+    <script src="angularjs/angular.js" type="application/javascript"></script>
+    <!--<link href="angularjs/bootstrap.css" rel="stylesheet">-->
+    <!--<link href="angularjs/bootstrap-theme.css" rel="stylesheet">-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+          integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script>
+        angular.module("sportsStore", ["customFilters", "cart", "ngRoute"])
+            .config(function ($routeProvider) {
 
-                        $routeProvider.when("/checkout", {
-                            templateUrl: "angularjs/views/checkoutSummary.html"
-                        });
+                $routeProvider.when("/checkout", {
+                    templateUrl: "angularjs/views/checkoutSummary.html"
+                });
 
-                        $routeProvider.when("/products", {
-                            templateUrl: "angularjs/views/productList.html"
-                        });
+                $routeProvider.when("/products", {
+                    templateUrl: "angularjs/views/productList.html"
+                });
 
-                        $routeProvider.when("/complete", {
-                            templateUrl: "angularjs/views/thankYou.html"
-                        });
+                $routeProvider.when("/complete", {
+                    templateUrl: "angularjs/views/thankYou.html"
+                });
 
-                        $routeProvider.when("/placeorder", {
-                            templateUrl: "angularjs/views/placeOrder.html"
-                        });
+                $routeProvider.when("/placeorder", {
+                    templateUrl: "angularjs/views/placeOrder.html"
+                });
 
-                        $routeProvider.otherwise({
-                            templateUrl: "angularjs/views/productList.html"
-                        });
+                $routeProvider.otherwise({
+                    templateUrl: "angularjs/views/productList.html"
+                });
 
-                    });
-        </script>
-        <script src="angularjs/controllers/sportsStore.js"></script>
-        <script src="angularjs/filters/customFilters.js"></script>
-        <script src="angularjs/components/cart/cart.js"></script>
-        <script src="angularjs/controllers/productListControllers.js"></script>
-        <script src="angularjs/controllers/checkoutControllers.js"></script>
-        <script src="angularjs/ngmodules/angular-route.js"></script>
-    </head>
-    <body ng-controller="sportsStoreCtrl">
-        <div class="navbar navbar-inverse">
-            <a class="navbar-brand" ng-href="#!">Sports Store</a>
-            <cart-summary></cart-summary>
-        </div>
+            });
+    </script>
+    <script src="angularjs/controllers/sportsStore.js" type="application/javascript"></script>
+    <script src="angularjs/filters/customFilters.js" type="application/javascript"></script>
+    <script src="angularjs/components/cart/cart.js" type="application/javascript"></script>
+    <script src="angularjs/controllers/productListControllers.js" type="application/javascript"></script>
+    <script src="angularjs/controllers/checkoutControllers.js" type="application/javascript"></script>
+    <script src="angularjs/angular-route.js" type="application/javascript"></script>
+</head>
+<body ng-controller="sportsStoreCtrl">
+<div class="navbar navbar-inverse">
+    <a class="navbar-brand" ng-href="#!">EasySale</a>
+    <cart-summary></cart-summary>
+</div>
 
-        <div class="alert alert-danger" ng-show="data.error">
-            Error ({{data.error.status}}). The product data was not loaded.
-        </div>
+<div class="alert alert-danger" ng-show="data.error">
+    Error ({{data.error.status}}). The product data was not loaded.
+</div>
 
-        <ng-view />
+<ng-view/>
 
-    </body>
+</body>
 </html>
