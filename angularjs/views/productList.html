@@ -7,8 +7,9 @@
            ng-class="getCategoryClass(item)">{{item}}</a>
     </div>
     <div class="col-xs-8">
-        <div class="well" ng-repeat="item in data.products | filter: categoryFilterFn 
+        <div class="well well-lg clearfix" ng-repeat="item in data.products | filter: categoryFilterFn
                                     | range:selectedPage:pageSize">
+            <img src="http://localhost:8082/facebook.png" class="pull-left img-responsive">
             <h3>
                 <strong>{{item.name}}</strong>
                 <span class="pull-right label label-primary">
