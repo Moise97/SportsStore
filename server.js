@@ -1,9 +1,9 @@
 // Required Modules
-var express = require("express");
-var morgan = require("morgan");
-var app = express();
+const express = require("express");
+const morgan = require("morgan");
+const app = express();
 
-var port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
 app.use(morgan("dev"));
 app.use(express.static("./"));
