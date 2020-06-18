@@ -1,15 +1,11 @@
 <style>
-    .ng-invalid {
-        background-color: lightpink;
-    }
-
-    .ng-valid {
-        background-color: lightgreen;
-    }
-
     span.error {
         color: red;
         font-weight: bold;
+    }
+
+    h3, h2, p {
+        text-align: center;
     }
 </style>
 
@@ -18,7 +14,7 @@
 
 <form name="shippingForm" novalidate>
 
-    <div class="well">
+    <div class="well" style="margin-right: 10rem; margin-left: 10rem">
 
         <h3>Ship to</h3>
         <div class="form-group">
@@ -26,6 +22,14 @@
             <input name="name" class="form-control" ng-model="data.shipping.name" required>
             <span class="error" ng-show="shippingForm.name.$error.required">
                 Please enter a name.
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>Phone nr: </label>
+            <input name="phone" class="form-control" ng-model="data.shipping.phone" required>
+            <span class="error" ng-show="shippingForm.name.$error.required">
+                Please enter a phone number.
             </span>
         </div>
 
@@ -43,14 +47,6 @@
             <input name="city" class="form-control" ng-model="data.shipping.city" required>
             <span class="error" ng-show="shippingForm.city.$error.required">
                 Please enter a city.
-            </span>
-        </div>
-
-        <div class="form-group">
-            <label>State: </label>
-            <input name="state" class="form-control" ng-model="data.shipping.state" required>
-            <span class="error" ng-show="shippingForm.state.$error.required">
-                Please enter a state.
             </span>
         </div>
 
@@ -78,7 +74,8 @@
             </label>
         </div>
 
-        <div class="text-center">
+        <div class="text-center" style="padding-top: 5rem;">
+            <a ng-href="#!checkout" class="btn btn-primary">Back</a>
             <button ng-disabled="shippingForm.$invalid" class="btn btn-primary"
                     ng-click="sendOrder(data.shipping)">Complete order
             </button>
