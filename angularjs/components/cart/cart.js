@@ -54,20 +54,28 @@ angular.module("cart", [])
 
                 let cartData = cart.getProducts();
 
-                $scope.total = function () {
-                    let total = 0;
+                /**
+                 * Calculate the amount contained in cardData.
+                 * @returns {number}
+                 */
+                $scope.totalAmount = function () {
+                    let totalAmount = 0;
                     for (let i = 0; i < cartData.length; i++) {
-                        total += (cartData[i].price * cartData[i].count);
+                        totalAmount += (cartData[i].price * cartData[i].count);
                     }
-                    return total;
+                    return totalAmount;
                 };
 
+                /**
+                 * Calculate the items contained in cadData.
+                 * @returns {number}
+                 */
                 $scope.itemCount = function () {
-                    let total = 0;
+                    let items = 0;
                     for (let i = 0; i < cartData.length; i++) {
-                        total += cartData[i].count;
+                        items += cartData[i].count;
                     }
-                    return total;
+                    return items;
                 }
             }
         };
