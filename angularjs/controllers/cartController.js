@@ -49,7 +49,7 @@ angular.module("cart", [])
     .directive("cartSummary", function (cart) {
         return {
             restrict: "E",
-            templateUrl: "angularjs/components/cart/cartSummary.html",
+            templateUrl: "angularjs/views/cartSummary.html",
             controller: function ($scope) {
 
                 let cartData = cart.getProducts();

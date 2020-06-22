@@ -1,9 +1,9 @@
 angular.module("sportsStore")
     .constant("dataUrl", "http://localhost:8082/products")
     .constant("orderUrl", "http://localhost:5500/orders")
-    .controller('sportsStoreCtrl', function ($scope, $http, $location, dataUrl, orderUrl, cart) {
-        $scope.data = {};
+    .controller('mainController', function ($scope, $http, $location, dataUrl, orderUrl, cart) {
 
+        $scope.data = {};
         $http({
             method: 'GET',
             url: dataUrl
@@ -15,6 +15,10 @@ angular.module("sportsStore")
                 $scope.data.error = error;
             });
 
+        /**
+         * Perform a command.
+         * @param shippingDetails
+         */
         $scope.sendOrder = function (shippingDetails) {
 
             let order = angular.copy(shippingDetails);
@@ -36,5 +40,4 @@ angular.module("sportsStore")
                     $location.path("/complete");
                 })
         }
-
     });
