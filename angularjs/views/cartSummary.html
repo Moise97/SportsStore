@@ -1,19 +1,16 @@
 <style>
     .navbar-right {
         float: right !important;
-        margin-right: 5px;
-    }
-
-    .navbar-text {
-        margin-right: 10px;
+        border: 1px solid greenyellow;
+        border-radius: 5px;
+        margin: 1px;
+        background-color: aliceblue;
     }
 </style>
 
 <div class="navbar-right">
     <div class="navbar-text">
-        <b>Your cart:</b>
-        {{itemCount()}} item(s),
-        {{totalAmount() | currency}}
+        <b>Your cart:</b> {{itemCount()}} item(s), {{totalAmount() | currency}}
     </div>
     <a ng-href="#!checkout" class="btn btn-default navbar-btn">Checkout</a>
 </div>
